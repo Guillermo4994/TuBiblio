@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:padding="30dp"
+    tools:context=".InicioSesion"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:id="@+id/Biblio"
+        android:layout_width="305dp"
+        android:layout_height="100dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/tu_biblio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imagen" />
+
+    <ImageView
+        android:layout_width="125dp"
+        android:layout_height="150dp"
+        android:id="@+id/imagen"
+        android:src="@drawable/imagen_escudo_ayuntamiento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <EditText
+        android:id="@+id/usuario"
+        android:layout_width="250dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="25dp"
+        android:hint="Usuario"
+        android:textSize="25sp"
+        android:textColor="#000000"
+        style="?attr/materialIconButtonOutlinedStyle"
+        android:gravity="center"
+        android:backgroundTint="@color/white"
+        android:inputType="text"
+        app:cornerRadius="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Biblio"/>
+    <EditText
+        android:id="@+id/contrasenia"
+        android:layout_width="250dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="25dp"
+        android:hint="Contraseña"
+        android:textSize="25sp"
+        android:textColor="#000000"
+        style="?attr/materialIconButtonOutlinedStyle"
+        android:gravity="center"
+        android:inputType="textPassword"
+        app:cornerRadius="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/usuario"/>
+    <Button
+        android:id="@+id/btnIniciar"
+        android:layout_width="250dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="50dp"
+        android:text="Iniciar"
+        android:textSize="25sp"
+        android:textColor="#000000"
+        style="?attr/materialIconButtonOutlinedStyle"
+        android:gravity="center"
+        app:cornerRadius="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contrasenia"/>
+    <TextView
+        android:id="@+id/btnOlvidar"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="¿Olvidaste tu contraseña?"
+        android:textSize="15sp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnIniciar"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
