@@ -12,6 +12,7 @@ import com.google.android.material.snackbar.Snackbar
 
 class InicioSesion : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding : ActivityInicioSesionBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityInicioSesionBinding.inflate(layoutInflater)
@@ -29,6 +30,8 @@ class InicioSesion : AppCompatActivity(), View.OnClickListener {
                     Snackbar.make(binding.root,"Te falta introducir algun campo", Snackbar.LENGTH_LONG).show()
                 }else{
                     val intent = Intent(this, principal::class.java)
+                    val nombreUsuario = binding.usuario.text.toString()
+                    intent.putExtra("usuario_nombre", nombreUsuario)
                     startActivity(intent)
                 }
             }

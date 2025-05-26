@@ -3,8 +3,64 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:layout_marginStart="25dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Libro">
+
+    <ImageView
+        android:layout_width="275dp"
+        android:layout_height="65dp"
+        android:src="@drawable/tu_biblio"
+        android:id="@+id/Biblio"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imagen"
+        app:layout_constraintBottom_toBottomOf="@id/imagen" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="75dp"
+        android:id="@+id/imagen"
+        android:src="@drawable/imagen_escudo_ayuntamiento"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/libro"
+        android:layout_width="180dp"
+        android:layout_height="225dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/imagen"
+        app:layout_constraintStart_toStartOf="@+id/imagen"
+        />
+    <TextView
+        android:layout_width="195dp"
+        android:layout_height="225dp"
+        app:layout_constraintStart_toEndOf="@+id/libro"
+        app:layout_constraintBottom_toBottomOf="@+id/libro"
+        />
+    <TextView
+        android:id="@+id/resumen"
+        android:layout_width="380dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/libro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:text="Reservar"
+        android:textSize="25dp"
+        style="?attr/materialIconButtonOutlinedStyle"
+        android:backgroundTint="@color/white"
+        app:cornerRadius="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/resumen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

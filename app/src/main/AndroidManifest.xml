@@ -14,7 +14,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TuBiblio"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".perfil"
+            android:exported="false"
+            android:theme="@style/Theme.TuBiblio" />
+        <activity
+            android:name=".Registrarse"
+            android:exported="false"
+            android:theme="@style/Theme.TuBiblio" />
         <activity
             android:name=".Libro"
             android:exported="false" />
@@ -27,9 +36,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Registrarse"
-            android:exported="false" />
         <activity
             android:name=".RecuperarContrasena"
             android:exported="false" />
