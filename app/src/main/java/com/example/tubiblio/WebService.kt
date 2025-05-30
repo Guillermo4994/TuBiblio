@@ -1,6 +1,7 @@
 package net.simplifiedcoding.androidphpmysql;
 
 
+import com.example.tubiblio.Libro
 import com.example.tubiblio.Usuario
 import com.example.tubiblio.UsuarioResponse
 import com.google.gson.GsonBuilder
@@ -56,6 +57,12 @@ interface  WebService {
     suspend fun eliminarUsuario(
         @Field("id") id: Int
     ): Response<GenericResponse>
+
+
+    @GET("buscarLibros.php")
+    suspend fun buscarLibros(
+        @Query("q") query: String
+    ): Response<LibrosResponse>
 }
 
 object RetrofitClient{
@@ -71,4 +78,8 @@ object RetrofitClient{
 data class GenericResponse(
     val error: Boolean,
     val message: String
+)
+data class LibrosResponse(
+    val error: Boolean,
+    val libros: List<Libro>?
 )
