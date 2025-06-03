@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tubiblio.databinding.ActivityInicioSesionBinding
 import com.example.tubiblio.databinding.ActivityPrincipalBinding
 import kotlinx.coroutines.launch
@@ -31,6 +32,7 @@ class principal : AppCompatActivity() {
             startActivity(intent)
 
         }
+                binding.listLibros.layoutManager = LinearLayoutManager(this@principal)
         binding.listLibros.adapter = adapter
         binding.btnMenu.setOnClickListener {
             val popup = PopupMenu(this, binding.btnMenu)

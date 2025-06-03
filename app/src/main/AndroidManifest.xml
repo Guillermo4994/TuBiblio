@@ -25,7 +25,7 @@
             android:exported="false"
             android:theme="@style/Theme.TuBiblio" />
         <activity
-            android:name=".Libro"
+            android:name=".libroPintar"
             android:exported="false" />
         <activity
             android:name=".bienvenida"

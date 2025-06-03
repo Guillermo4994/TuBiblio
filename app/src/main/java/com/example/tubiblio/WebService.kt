@@ -19,7 +19,7 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 object AppConstans{
-    const val URL = "http://192.168.1.36/Android/v1/"
+    const val URL = "http://192.168.1.35/Android/v1/"
 }
 interface  WebService {
 
@@ -63,6 +63,15 @@ interface  WebService {
     suspend fun buscarLibros(
         @Query("q") query: String
     ): Response<LibrosResponse>
+
+    @FormUrlEncoded
+    @POST("reservar_libro.php")
+    suspend fun reservarLibro(
+        @Field("usuario_usuario")  usuarioUsuario: String,
+        @Field("usuario_email")  usuarioEmail: String,
+        @Field("libro_titulo")       libroTitulo: String,
+        @Field("lugar_recogida") lugarRecogida: String
+    ): Response<ReservarResponse>
 }
 
 object RetrofitClient{
@@ -75,11 +84,20 @@ object RetrofitClient{
 
     }
 }
+
+
 data class GenericResponse(
     val error: Boolean,
     val message: String
 )
+
 data class LibrosResponse(
     val error: Boolean,
     val libros: List<Libro>?
+)
+
+data class ReservarResponse(
+    val error: Boolean,
+    val message: String,
+    val fecha_devolucion: String?
 )

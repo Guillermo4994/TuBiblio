@@ -1,5 +1,6 @@
 package com.example.tubiblio
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -59,6 +60,11 @@ class Registrarse : AppCompatActivity(), View.OnClickListener {
                         Snackbar.LENGTH_LONG
                     ).show()
                 }
+                val prefs = getSharedPreferences("usuario_pref", Context.MODE_PRIVATE)
+                prefs.edit().putString("email", binding.email.text.toString().trim()).apply()
+                val prefs2 = getSharedPreferences("usuario_pref2", Context.MODE_PRIVATE)
+                prefs.edit().putString("usuario", binding.usuario.text.toString().trim()).apply()
+
                 agregarUsuario()
 
             }

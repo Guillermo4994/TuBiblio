@@ -1,5 +1,6 @@
 package com.example.tubiblio
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
@@ -35,6 +36,8 @@ class perfil : AppCompatActivity() {
         binding.eliminar.setOnClickListener{
             Log.d("Perfil", "Eliminar usuario con id: $id")
             eliminarUsuario(id)
+            val intent = Intent(this, bienvenida::class.java)
+            startActivity(intent)
         }
 
         if (nombreUsuario.isNullOrBlank()) {

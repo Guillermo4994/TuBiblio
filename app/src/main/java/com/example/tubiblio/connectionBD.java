@@ -7,7 +7,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class connectionBD {
-    private String ip = "192.168.1.36";
+    private String ip = "192.168.1.35";
     private String usuario = "root";
     private String contraseña = "";
     private String bd = "tubiblio";
