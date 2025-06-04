@@ -72,6 +72,13 @@ interface  WebService {
         @Field("libro_titulo")       libroTitulo: String,
         @Field("lugar_recogida") lugarRecogida: String
     ): Response<ReservarResponse>
+
+    @FormUrlEncoded
+    @POST("login.php")
+    suspend fun loginUsuario(
+        @Field("usuario") usuario: String,
+        @Field("pass") pass: String
+    ): Response<LoginResponse>
 }
 
 object RetrofitClient{
@@ -100,4 +107,9 @@ data class ReservarResponse(
     val error: Boolean,
     val message: String,
     val fecha_devolucion: String?
+)
+data class LoginResponse(
+    val error: Boolean,
+    val message: String? = null,
+    val usuario: Usuario? = null
 )
