@@ -62,6 +62,9 @@ dependencies {
 
     implementation(libs.volley)
 
+    implementation (libs.glide)
+
+
     implementation(files("libs/jtds-1.3.1.jar"))
     implementation(libs.androidx.runtime.saved.instance.state)
     implementation(libs.common)

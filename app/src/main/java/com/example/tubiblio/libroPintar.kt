@@ -4,11 +4,13 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.preference.PreferenceManager
+import com.bumptech.glide.Glide
 import com.example.tubiblio.databinding.ActivityLibroPintarBinding
 import kotlinx.coroutines.launch
 
@@ -56,6 +58,9 @@ class libroPintar : AppCompatActivity() {
     //Asignamos los datos a los campos de nuestra pantalla libro.
     private fun mostrarDatos(libro: Libro) {
         binding.apply {
+            Glide.with(this@libroPintar)
+                .load(libro.portada)
+                .into(portadaLibro)
             findViewById<TextView>(R.id.resumen).text = libro.descripcion
             findViewById<TextView>(R.id.titulo).text = libro.titulo
         }

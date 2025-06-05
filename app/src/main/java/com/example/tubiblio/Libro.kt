@@ -6,6 +6,7 @@ import java.io.Serializable
 data class Libro(
     val id: Int,
     val isbn: String,
+    val portada: String,
     val titulo: String,
     val anio: String,
     val n_pag: String,
